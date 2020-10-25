@@ -1,0 +1,5 @@
+﻿ally_relative_strength_multiplier = {
+    add = scope:actor.max_military_strength
+    divide = scope:recipient.max_military_strength
+    min = 1
+}

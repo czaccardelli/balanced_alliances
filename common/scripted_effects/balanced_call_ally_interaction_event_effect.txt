@@ -1,0 +1,51 @@
+﻿call_ally_interaction_event_effect = {
+	scope:target = {
+		hidden_effect = {
+			set_called_to = scope:recipient
+		}
+		if = {
+			limit = {
+				is_attacker = scope:actor
+			}
+			add_attacker = scope:recipient
+			scope:actor = {
+				if = {
+					limit = {
+						scope:recipient.primary_title.tier = tier_county
+					}
+					add_prestige = {
+                        add = minor_prestige_loss
+                        multiply = ally_relative_strength_multiplier
+                    }
+				}
+				else_if = {
+					limit = {
+						scope:recipient.primary_title.tier = tier_duchy
+					}
+					add_prestige = {
+                        add = medium_prestige_loss
+                        multiply = ally_relative_strength_multiplier
+                    }
+				}
+				else_if = {
+					limit = {
+						scope:recipient.primary_title.tier = tier_kingdom
+					}
+					add_prestige = {
+                        add = major_prestige_loss
+                        multiply = ally_relative_strength_multiplier
+                    }
+				}
+				else = {
+					add_prestige = {
+                        add = massive_prestige_loss
+                        multiply = ally_relative_strength_multiplier
+                    }
+				}
+			}
+		}
+		else = {
+			add_defender = scope:recipient
+		}
+	}
+}
