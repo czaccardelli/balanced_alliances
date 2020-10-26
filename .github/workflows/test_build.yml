@@ -36,19 +36,13 @@ jobs:
           exclusions: '*.git'
           # Tool to use for archiving
           type: zip
-  test:
-    runs-on: ubuntu-latest
-    steps:
       - uses: actions/checkout@v2
 
       - run: mkdir -p path/to/artifact
 
-      - run: echo hello > path/to/artifact/world.txt
-  
-  upload:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/upload-artifact@v2
+      - run: echo hello > world.txt
+      - name: Upload Zip
+        uses: actions/upload-artifact@v2
         with:
           name: my-artifact
-          path: path/to/artifact/world.txt
+          path: world.txt
