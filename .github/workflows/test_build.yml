@@ -55,7 +55,7 @@ jobs:
           cd ..
           ls -a
           cd ..
-          cd work/_temp
+          cd /work/_temp
           ls -a
       - name: Upload Release Asset
         id: upload-release-asset 
