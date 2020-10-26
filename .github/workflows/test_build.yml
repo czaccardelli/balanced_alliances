@@ -58,6 +58,7 @@ jobs:
           cd /home/runner/work/_temp
           ls -a
           cd /home/runner/work/balanced_alliances/balanced_alliances
+          echo "hello" > world.txt
           ls -a
       - name: Upload Release Asset
         id: upload-release-asset 
