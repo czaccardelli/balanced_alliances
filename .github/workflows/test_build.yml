@@ -32,8 +32,6 @@ jobs:
         with:
           name: ${{ github.actor}}-${{ github.run_number }}
           path: ./
-      - name: 'Echo download path'
-        run: echo ${{ steps.download.outputs.download-path }}
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -54,6 +52,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} 
-          asset_path: ${{ steps.download.outputs.download-path }}
+          asset_path: ${{ github.actor}}-${{ github.run_number }}.zip
           asset_name: ${{ github.actor}}-${{ github.run_number }}.zip
           asset_content_type: application/zip
