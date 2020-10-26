@@ -22,17 +22,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Zip Release
-          # You may pin to the exact commit or the version.
-          # uses: TheDoctor0/zip-release@a1afcab9c664c9976ac398fa831eac67bed1eb0e
-        uses: TheDoctor0/zip-release@0.4.1
+      - uses: actions/upload-artifact@v2
         with:
-          # Filename for archive
-          filename: balanced_alliances.zip
-          # Base path for archive files
-          path: .
-          # Working directory before zipping
-          directory: common
-          # List of excluded files / directories
-          # exclusions: # optional, default is 
-          # Tool to use for archiving
-          type: zip
+          name: my-artifact
+          path: common
