@@ -26,8 +26,3 @@ jobs:
             ${{ github.workspace }}
             !${{ github.workspace }}/.git/
             !${{ github.workspace }}/.github/
-      - name: Download Zip
-        uses: actions/download-artifact@v2
-        with:
-          name: ${{ github.actor}}-${{ github.run_number }}
-          path: ${{ github.workspace }}
