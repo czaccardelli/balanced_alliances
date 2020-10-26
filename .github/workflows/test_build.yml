@@ -47,7 +47,7 @@ jobs:
           prerelease: true
       - name: get ls
         run: |
-          cd .
+          cd\
           ls -a
       - name: Upload Release Asset
         id: upload-release-asset 
