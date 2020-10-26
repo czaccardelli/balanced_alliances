@@ -34,7 +34,7 @@ jobs:
           path: ./temp
       - run: ls -R
       - name: Zip Downloaded Files (Again)
-        run: zip ${{ github.actor}}-${{ github.run_number }}.zip ./temp
+        run: zip ${{ github.actor}}-${{ github.run_number }}.zip ${{steps.download.outputs.download-path}}
       - name: Create Release
         if: success()
         id: create_release
