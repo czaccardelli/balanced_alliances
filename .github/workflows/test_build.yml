@@ -29,9 +29,9 @@ jobs:
           # Filename for archive
           filename: balanced_alliances.zip
           # Base path for archive files
-          path: "%userprofile%/documents/paradox interactive/crusader kings iii/mod"
+          path: "%userprofile%/documents/paradox interactive/crusader kings iii/mod/balanced_alliances"
           # Working directory before zipping
-          directory: balanced_alliances
+          directory: common
           # List of excluded files / directories
           # exclusions: # optional, default is 
           # Tool to use for archiving
