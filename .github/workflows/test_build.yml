@@ -36,13 +36,8 @@ jobs:
           exclusions: '*.git'
           # Tool to use for archiving
           type: zip
-      - uses: actions/checkout@v2
-
-      - run: mkdir -p path/to/artifact
-
-      - run: echo hello > world.txt
       - name: Upload Zip
         uses: actions/upload-artifact@v2
         with:
-          name: my-artifact
-          path: world.txt
+          name: balanced_alliances
+          path: balanced_alliances.zip
