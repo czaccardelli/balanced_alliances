@@ -18,7 +18,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - name: Upload Zip
+      - name: Upload Zip Artifact
         uses: actions/upload-artifact@v2
         with:
           name: ${{ github.actor}}-${{ github.run_number }}
@@ -26,6 +26,10 @@ jobs:
             ${{ github.workspace }}
             !${{ github.workspace }}/.git/
             !${{ github.workspace }}/.github/
+      - name: Download Zip Artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: ${{ github.actor}}-${{ github.run_number }}
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
