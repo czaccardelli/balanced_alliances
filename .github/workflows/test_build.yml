@@ -47,8 +47,14 @@ jobs:
           prerelease: true
       - name: get ls
         run: |
-          cd
           ls -a
+          cd -
+          ls -a
+          cd -
+          ls -a
+          cd -
+          ls -a
+          cd -
       - name: Upload Release Asset
         id: upload-release-asset 
         uses: actions/upload-release-asset@v1
