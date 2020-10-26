@@ -31,9 +31,9 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: ${{ github.actor}}-${{ github.run_number }}
-          path: ./
-      - name: Display structure of downloaded files
-        run: ls -R
+          path: ./temp
+      - name: Zip Downloaded Files (Again)
+        run: zip ${{ github.actor}}-${{ github.run_number }}.zip ./temp
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
