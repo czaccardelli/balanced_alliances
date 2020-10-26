@@ -18,6 +18,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+        env:
+          filepath: ./${{ github.actor}}-${{ github.run_number }}.zip
       - name: Upload Zip Artifact
         uses: actions/upload-artifact@v2
         with:
@@ -30,6 +32,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: ${{ github.actor}}-${{ github.run_number }}
+          path: ./${{ github.actor}}-${{ github.run_number }}.zip
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
