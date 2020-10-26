@@ -24,4 +24,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: balanced_alliances
-          path: ${{ github.workspace }}
+          path: |
+            ${{ github.workspace }}
+            !${{ github.workspace }}/.git/
+            !${{ github.workspace }}/.github/
