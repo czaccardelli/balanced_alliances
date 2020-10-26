@@ -22,5 +22,4 @@ jobs:
       - name: Upload Zip
         uses: actions/upload-artifact@v2
         with:
-          name: balanced_alliances
           path: ${{ github.workspace }}
