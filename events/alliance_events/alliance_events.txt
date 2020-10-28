@@ -1,0 +1,49 @@
+﻿namespace = alliance_event
+
+# appeal to ally to receive their pledge of support in an offensive war
+alliance_event.1001 = {
+    type = character_event
+    title = alliance_event.1001.t
+    desc = alliance_event.1001.desc
+    theme = diplomacy
+    left_portrait = {
+        character = scope:planned_war.primary_attacker
+    }
+    right_portrait = {
+        character = root # scope:potential_ally i.e. who this event is sent to
+    }
+
+    # pledge your support for the war
+    option = {
+        name = alliance_event.1001.a
+        scope:planned_war = {
+            add_prestige = {
+                value = scope:primary_attacker.prestige_cost_to_call_as_ally
+                multiply = -1
+            }
+            set_variable = {
+                name = pledged_supporters
+            }
+        }
+
+            
+        ai_chance = {
+            base = 100 # ai will always join for now
+        }
+    }
+
+    # refuse to join the war
+    option = {
+        name = alliance_event.1001.b
+
+        add_prestige = {
+            value = medium_prestige_value
+            multiply = -1
+        }
+
+        ai_chance = {
+            base = 0
+        }
+    }
+}
+

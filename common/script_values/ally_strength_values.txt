@@ -36,3 +36,10 @@ prestige_cost_per_tier = {
         value = massive_prestige_loss
     }
 }
+
+prestige_cost_to_call_as_ally = {
+    add = max_military_strength_with_tier_factor
+    scope:primary_attacker = {
+        divide = max_military_strength
+    }
+}
