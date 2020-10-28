@@ -15,7 +15,7 @@
 					}
 					add_prestige = {
                         add = minor_prestige_loss
-                        multiply = ally_relative_strength_multiplier
+                        multiply = ally_to_us_relative_strength_multiplier
                     }
 				}
 				else_if = {
@@ -24,7 +24,7 @@
 					}
 					add_prestige = {
                         add = medium_prestige_loss
-                        multiply = ally_relative_strength_multiplier
+                        multiply = ally_to_us_relative_strength_multiplier
                     }
 				}
 				else_if = {
@@ -33,13 +33,13 @@
 					}
 					add_prestige = {
                         add = major_prestige_loss
-                        multiply = ally_relative_strength_multiplier
+                        multiply = ally_to_us_relative_strength_multiplier
                     }
 				}
 				else = {
 					add_prestige = {
                         add = massive_prestige_loss
-                        multiply = ally_relative_strength_multiplier
+                        multiply = ally_to_us_relative_strength_multiplier
                     }
 				}
 			}
