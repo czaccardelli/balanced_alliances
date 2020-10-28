@@ -1,0 +1,38 @@
+﻿max_allies_strength_value = {
+    every_ally = {
+        add = max_military_strength
+    }
+}
+
+max_military_strength_with_tier_factor = {
+    add = prestige_cost_per_tier
+    multiply = max_military_strength
+}
+
+remaining_prestige_divided_by_max_military_strength = {
+    value = var:remaining_prestige
+    divide = max_military_strength
+}
+
+effective_prestige = {
+    value = prestige
+    multiply = max_military_strength
+}
+
+prestige_cost_per_tier = {
+    if = {
+        limit = { primary_title.tier = tier_county }
+        value = minor_prestige_loss
+    }
+    else_if = {
+        limit = { primary_title.tier = tier_duchy }
+        value = medium_prestige_loss
+    }
+    else_if = {
+        limit = { primary_title.tier = tier_kingdom }
+        value = major_prestige_loss
+    }
+    else = {
+        value = massive_prestige_loss
+    }
+}
