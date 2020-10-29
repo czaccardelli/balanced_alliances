@@ -1,4 +1,15 @@
-﻿tag_potential_callable_allies_effect = {
+﻿
+ask_for_pledge_of_support_effect = {
+    save_scope_as = planned_war
+    every_ally = {
+        save_scope_as = potential_ally
+        scope:potential_ally = {
+            trigger_event = alliance_event.1001
+        }
+    }
+}
+
+tag_potential_callable_allies_effect = {
     save_scope_as = planned_war
     scope:primary_attacker = {
         set_local_variable = {

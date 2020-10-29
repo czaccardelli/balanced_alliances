@@ -16,16 +16,11 @@ alliance_event.1001 = {
     # pledge your support for the war
     option = {
         name = alliance_event.1001.a
-        scope:planned_war = {
-            add_prestige = {
-                value = scope:primary_attacker.prestige_cost_to_call_as_ally
-                multiply = -1
-            }
-            set_variable = {
-                name = pledged_supporters
-            }
-        }
 
+        set_variable = {
+            name = pledged_support_for_war
+            value = scope:planned_war
+        }
             
         ai_chance = {
             base = 100 # ai will always join for now
