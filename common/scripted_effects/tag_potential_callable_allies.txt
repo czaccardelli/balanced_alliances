@@ -6,6 +6,10 @@
     }
     every_ally = {
         add_to_list = potential_allies_not_tagged
+        limit = {
+            has_relation_pledged_supporter = scope:caller
+        }
+        remove_relation_pledged_supporter_of = scope:caller
     }
     while = {
         limit = {
@@ -51,9 +55,6 @@
     }
     every_in_list = {
         list = potential_allies_to_be_tagged
-        set_variable = {
-            name = pledged_support
-            value = scope:caller
-        }
+        set_relation_pledged_supporter_of = scope:caller
     }
 }
