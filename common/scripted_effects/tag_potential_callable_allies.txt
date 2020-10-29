@@ -1,4 +1,5 @@
 ﻿tag_potential_callable_allies_effect = {
+    save_scope_as = caller
     set_local_variable = {
         name = effective_remaining_prestige
         value = effective_prestige
@@ -45,8 +46,14 @@
             change_variable = {
                 name = effective_remaining_prestige
                 subtract = max_military_strength_multiplied_by_tier_factor
-                }
             }
+        }
+    }
+    every_in_list = {
+        list = potential_allies_to_be_tagged
+        set_variable = {
+            name = pledged_support
+            value = scope:caller
         }
     }
 }
