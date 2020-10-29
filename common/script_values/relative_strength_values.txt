@@ -1,5 +1,6 @@
 ﻿defense_strength_value = {
     scope:defender = {
+        add = max_military_strength
         every_ally = {
             add = max_military_strength
         }
