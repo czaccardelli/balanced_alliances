@@ -24,6 +24,10 @@
 		}
 	}
 
+	ai_score_mult = {
+		value = standard_war_ai_score_mult_value
+	}
+
 	#allowed_for_character = {}
 
 	allowed_against_character = {

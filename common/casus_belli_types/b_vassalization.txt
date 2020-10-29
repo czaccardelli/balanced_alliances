@@ -47,6 +47,10 @@
 		scope:attacker.primary_title.tier > scope:defender.primary_title.tier # Must be lower tier
 		
 	}
+
+	ai_score_mult = {
+		value = standard_war_ai_score_mult_value
+	}
 	
 	cost = {
 		piety = {

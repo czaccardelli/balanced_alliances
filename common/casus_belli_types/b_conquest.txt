@@ -26,6 +26,7 @@
 	}
 	ai_score_mult = {
 		value = viking_conquest_ai_score_value
+		multiply = standard_war_ai_score_mult_value
 	}
 
 	valid_to_start = {
@@ -499,6 +500,7 @@ duchy_conquest_cb = {
 	}
 	ai_score_mult = {
 		value = viking_conquest_ai_score_value
+		multiply = standard_war_ai_score_mult_value
 	}
 
 	valid_to_start = {
@@ -1111,6 +1113,10 @@ ducal_conquest_cb = {
 	on_invalidated = {
 	}
 
+	ai_score_mult = {
+		value = standard_war_ai_score_mult_value
+	}
+
 	cost = {
 		piety = {
 			value = 0
@@ -1595,6 +1601,10 @@ ireland_laudabiliter_conquest_cb = {
 	}
 
 	on_invalidated = {	
+	}
+
+	ai_score_mult = {
+		value = standard_war_ai_score_mult_value
 	}
 
 	cost = {
