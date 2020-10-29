@@ -9,15 +9,17 @@
 }
 
 attacker_and_allies_strength_value = {
-    value = {
-        scope:attacker = {
-            add = max_military_strength
-            every_ally = {
-                add = max_military_strength
+    scope:attacker = {
+        add = max_military_strength
+        every_ally = {
+            limit = {
+                exists = var:pledged_support
+                var:pledged_support = scope:attacker
             }
+            add = max_military_strength
         }
-        min = 1
     }
+    min = 1
 }
 
 compare_defender_to_attacker_sides_value = {
