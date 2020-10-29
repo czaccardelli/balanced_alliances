@@ -1,0 +1,31 @@
+﻿ask_to_pledge_support_interaction = {
+    category = interaction_category_diplomacy
+    desc = ask_to_pledge_support_interaction_desc
+
+    is_shown = {
+        scope:recipient = {
+            is_allied_to = scope:actor
+            is_ruler = yes
+        }
+    }
+
+    is_valid_showing_failures_only = {
+		scope:recipient = {
+            custom_description = {
+                text = already_a_pledged_supporter
+                subject = scope:recipient
+                has_relation_pledged_supporter_of = scope:actor
+            }
+        }
+	}
+
+    on_accept = {
+        scope:actor = {
+            set_relation_pledged_supporter = scope:recipient
+        }
+	}
+
+    ai_accept = {
+        base = 100 # ai will always accept for now
+    }
+}
