@@ -1,6 +1,11 @@
 ﻿ask_to_pledge_support_interaction = {
     category = interaction_category_diplomacy
     desc = ask_to_pledge_support_interaction_desc
+    #interface = call_ally
+    #interface_priority = 59
+
+    #pause_on_receive = yes
+    #popup_on_receie = yes
 
     is_shown = {
         scope:recipient = {
@@ -25,7 +30,26 @@
         }
 	}
 
+    on_decline = {
+        # TODO: leave the player alone after they refuse
+    }
+
+    ai_frequency = 1
+
+    ai_targets = {
+        ai_recipients = scripted_relations
+    }
+
     ai_accept = {
         base = 100 # ai will always accept for now
+    }
+
+    ai_will_do = {
+        base = 100
+
+        modifier = {
+            is_at_war = yes
+            factor = 0
+        }
     }
 }
