@@ -1,0 +1,12 @@
+﻿l_english:
+  GET_PLEDGED_SUPPORTER:0 "[TARGET_CHARACTER.GetShortUIName|U] will pledge support to [CHARACTER.GetShortUIName] in an offensive [war|E]."
+  YOU_GET_PLEDGED_SUPPORTER:0 "You pledge support to [CHARACTER.GetShortUIName|U] in an offensive [war|E]."
+  THEY_GET_PLEDGED_SUPPORTER:0 "[TARGET_CHARACTER.GetShortUIName] pledges support to [CHARACTER.GetShortUIName] in an offensive [war|E]."
+  YOU_GOT_PLEDGED_SUPPORTER:0 "You pledged support to [CHARACTER.GetShortUIName|U] in an offensive [war|E]."
+  THEY_GOT_PLEDGED_SUPPORTER:0 "[TARGET_CHARACTER.GetShortUIName] pledged support to [CHARACTER.GetShortUIName] in an offensive [war|E]."
+
+  GET_SUPPORTED_WAR_LEADER:0 "[CHARACTER.GetShortUIName] pledges support to [TARGET_CHARACTER.GetShortUIName] in an offensive [war|E]."
+  YOU_GET_SUPPORTED_WAR_LEADER:0 "[CHARACTER.GetShortUIName] pledges support to you in an offensive [war|E]."
+  THEY_GET_SUPPORTED_WAR_LEADER:0 "[CHARACTER.GetShortUIName] pledges support to [TARGET_CHARACTER.GetShortUIName] in an offensive [war|E]."
+  YOU_GOT_SUPPORTED_WAR_LEADER:0 "[CHARACTER.GetShortUIName] pledged support to you in an offensive [war|E]."
+  THEY_GOT_SUPPORTED_WAR_LEADER:0 "[CHARACTER.GetShortUIName] pledged support to [TARGET_CHARACTER.GetShortUIName] in an offensive [war|E]."

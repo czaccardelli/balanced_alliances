@@ -1,0 +1,15 @@
+﻿set_relation_pledged_supporter = {
+    global = GET_PLEDGED_SUPPORTER
+	first = YOU_GET_PLEDGED_SUPPORTER
+	third = THEY_GET_PLEDGED_SUPPORTER
+	first_past = YOU_GOT_PLEDGED_SUPPORTER
+	third_past = THEY_GOT_PLEDGED_SUPPORTER
+}
+
+set_relation_supported_war_leader = {
+    global = GET_SUPPORTED_WAR_LEADER
+	first = YOU_GET_SUPPORTED_WAR_LEADER
+	third = THEY_GET_SUPPORTED_WAR_LEADER
+	first_past = YOU_GOT_SUPPORTED_WAR_LEADER
+	third_past = THEY_GOT_SUPPORTED_WAR_LEADER
+}

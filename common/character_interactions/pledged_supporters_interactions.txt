@@ -32,6 +32,17 @@
 				}
             }
         }
+        scope:recipient = {
+            hidden_effect = {
+                send_interface_toast = {
+					title = set_supported_war_leader_interaction_toast
+					left_icon = scope:actor
+					right_icon = scope:recipient
+
+					custom_tooltip = set_supported_war_leader_interaction_toast_pledged
+				}
+            }
+        }
 	}
 
     on_decline = {
