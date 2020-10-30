@@ -1,9 +1,9 @@
 ﻿pledged_supporter = {
     corresponding = pledged_supporter_of
-    hidden = yes
+    #hidden = yes
 }
 
 pledged_supporter_of = {
     corresponding = pledged_supporter
-    hidden = yes
+    #hidden = yes
 }
