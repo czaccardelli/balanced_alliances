@@ -1,0 +1,6 @@
+﻿already_a_pledged_supporter = {
+    first = THEY_ARE_ALREADY_A_PLEDGED_SUPPORTER
+    first_not = THEY_ARE_ALREADY_A_PLEDGED_SUPPORTER
+    third = THEY_ARE_ALREADY_A_PLEDGED_SUPPORTER
+    third_not = THEY_ARE_ALREADY_A_PLEDGED_SUPPORTER
+}

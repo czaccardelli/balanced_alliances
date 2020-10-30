@@ -1,11 +1,6 @@
 ﻿ask_to_pledge_support_interaction = {
     category = interaction_category_diplomacy
     desc = ask_to_pledge_support_interaction_desc
-    #interface = call_ally
-    #interface_priority = 59
-
-    #pause_on_receive = yes
-    #popup_on_receie = yes
 
     is_shown = {
         scope:recipient = {
@@ -19,7 +14,7 @@
             custom_description = {
                 text = already_a_pledged_supporter
                 subject = scope:recipient
-                has_relation_pledged_supporter_of = scope:actor
+                NOT = { has_relation_supported_war_leader = scope:actor }
             }
         }
 	}
@@ -27,6 +22,15 @@
     on_accept = {
         scope:actor = {
             set_relation_pledged_supporter = scope:recipient
+            hidden_effect = {
+                send_interface_toast = {
+					title = set_pledged_supporter_interaction_toast
+					left_icon = scope:actor
+					right_icon = scope:recipient
+
+					custom_tooltip = set_pledged_supporter_interaction_toast_pledged
+				}
+            }
         }
 	}
 

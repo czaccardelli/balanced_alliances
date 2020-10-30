@@ -13,7 +13,7 @@ attacker_and_allies_strength_value = {
         add = max_military_strength
         every_ally = {
             limit = {
-                has_relation_pledged_supporter_of = scope:attacker
+                has_relation_supported_war_leader = scope:attacker
             }
             add = max_military_strength
         }

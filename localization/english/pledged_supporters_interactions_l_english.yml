@@ -1,3 +1,5 @@
 ﻿l_english:
   ask_to_pledge_support_interaction_desc:0 "Ask To Pledge War Support"
-  already_a_pledged_supporter:0 "Already a pledged supporter"
+  THEY_ARE_ALREADY_A_PLEDGED_SUPPORTER:0 "[recipient.GetTitledFirstName] has already pledged support"
+  set_pledged_supporter_interaction_toast:0 "Pledged Supporter"
+  set_pledged_supporter_interaction_toast_pledged:0 "[recipient.GetTitledFirstName] has pledged his support in war."

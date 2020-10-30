@@ -1,9 +1,15 @@
 ﻿pledged_supporter = {
-    corresponding = pledged_supporter_of
+    corresponding = supported_war_leader
     #hidden = yes
 }
 
-pledged_supporter_of = {
+supported_war_leader = {
     corresponding = pledged_supporter
     #hidden = yes
+}
+
+dummy_ally = {
+    corresponding = dummy_ally
+    hidden = yes
+    # a dummy scripted relation that's set when an alliance forms so that the scripted_relations ai target can be used in the pledge support interaction
 }
