@@ -9,6 +9,7 @@
 			}
 			add_attacker = scope:recipient
 			scope:actor = {
+				remove_relation_pledged_supporter = scope:recipient
 				if = {
 					limit = {
 						scope:recipient.primary_title.tier = tier_county
