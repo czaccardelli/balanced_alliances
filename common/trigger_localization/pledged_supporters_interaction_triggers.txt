@@ -4,3 +4,10 @@
     third = THEY_ARE_ALREADY_A_PLEDGED_SUPPORTER
     third_not = THEY_ARE_ALREADY_A_PLEDGED_SUPPORTER
 }
+
+not_enough_prestige = {
+    first = YOU_DO_NOT_HAVE_ENOUGH_PRESTIGE
+    first_not = YOU_DO_NOT_HAVE_ENOUGH_PRESTIGE
+    third = YOU_DO_NOT_HAVE_ENOUGH_PRESTIGE
+    third_not = YOU_DO_NOT_HAVE_ENOUGH_PRESTIGE
+}

@@ -6,3 +6,5 @@
   set_pledged_supporter_interaction_toast_pledged:0 "[recipient.GetShortUIName] has pledged his support in your next offensive [war|E]."
   set_supported_war_leader_interaction_toast:0 "Supported War Leader"
   set_supported_war_leader_interaction_toast_pledged:0 "You have pledged [recipient.GetShortUINamePossessive] support in [actor.GetShortUINamePossessive] next offensive [war|E]."
+
+  YOU_DO_NOT_HAVE_ENOUGH_PRESTIGE:0 "You do not have enough [prestige|E]"

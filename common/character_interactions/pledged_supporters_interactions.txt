@@ -22,9 +22,9 @@
     can_send = {
         scope:actor = {
             custom_description = {
-                text = prestige_less_than
+                text = not_enough_prestige
                 subject = scope:actor
-                prestige < scope:recipient.cost_to_call_ally
+                prestige > scope:recipient.cost_to_call_ally
             }
         }
     }
