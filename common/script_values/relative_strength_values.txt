@@ -8,7 +8,7 @@
     min = 1
 }
 
-attacker_and_allies_strength_value = {
+attacker_and_pledged_allies_strength_value = {
     scope:attacker = {
         add = max_military_strength
         every_ally = {
@@ -24,7 +24,7 @@ attacker_and_allies_strength_value = {
 compare_defender_to_attacker_sides_value = {
     value = {
         add = defense_strength_value
-        divide = attacker_and_allies_strength_value
+        divide = attacker_and_pledged_allies_strength_value
     }
 }
 
