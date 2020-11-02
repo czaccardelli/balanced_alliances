@@ -3,3 +3,40 @@
     divide = scope:actor.max_military_strength
     min = 1
 }
+
+cost_to_call_ally = {
+    if = {
+        limit = {
+            scope:recipient.primary_title.tier = tier_county
+        }
+        value = {
+            add = minor_prestige_value
+            multiply = ally_to_us_relative_strength_multiplier
+        }
+    }
+    else_if = {
+        limit = {
+            scope:recipient.primary_title.tier = tier_duchy
+        }
+        value = {
+            add = medium_prestige_value
+            multiply = ally_to_us_relative_strength_multiplier
+        }
+    }
+    else_if = {
+        limit = {
+            scope:recipient.primary_title.tier = tier_kingdom
+        }
+        value = {
+            add = major_prestige_value
+            multiply = ally_to_us_relative_strength_multiplier
+        }
+    }
+    else = {
+        value = {
+            add = massive_prestige_value
+            multiply = ally_to_us_relative_strength_multiplier
+        }
+    }
+}
+

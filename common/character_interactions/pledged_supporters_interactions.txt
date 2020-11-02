@@ -19,9 +19,23 @@
         }
 	}
 
+    can_send = {
+        scope:actor = {
+            custom_description = {
+                text = prestige_less_than
+                subject = scope:actor
+                prestige < scope:recipient.cost_to_call_ally
+            }
+        }
+    }
+
     on_accept = {
         scope:actor = {
             set_relation_pledged_supporter = scope:recipient
+            add_prestige = {
+                value = cost_to_call_ally
+                multiply = -1
+            }
             hidden_effect = {
                 send_interface_toast = {
 					title = set_pledged_supporter_interaction_toast
@@ -46,7 +60,7 @@
 	}
 
     on_decline = {
-        # TODO: leave the player alone after they refuse
+        # TODO: change opinion values, etc.
     }
 
     ai_frequency = 1
