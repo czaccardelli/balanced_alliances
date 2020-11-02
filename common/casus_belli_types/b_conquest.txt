@@ -26,8 +26,7 @@
 	}
 	ai_score_mult = {
 		value = viking_conquest_ai_score_value
-		add = standard_war_ai_score_mult_value
-		divide = 2
+		multiply = standard_war_ai_score_mult_value
 	}
 
 	valid_to_start = {
