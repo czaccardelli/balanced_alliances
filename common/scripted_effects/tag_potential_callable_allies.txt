@@ -1,60 +1,69 @@
 ﻿tag_potential_callable_allies_effect = {
-    save_scope_as = caller
-    set_local_variable = {
-        name = effective_remaining_prestige
-        value = effective_prestige
-    }
-    every_ally = {
-        add_to_list = potential_allies_not_tagged
-        limit = {
-            has_relation_pledged_supporter = scope:caller
+    scope:attacker = {
+        set_local_variable = {
+            name = effective_remaining_prestige
+            value = effective_prestige
         }
-        remove_relation_pledged_supporter_of = scope:caller
-    }
-    while = {
-        limit = {
-
-            # effective_prestige is the total prestige multiplied by max_military_strength.
-            # This is used because ideally what we'd be doing here is comparing the remaining available prestige to the prestige cost to call an ally
-            # where the prestige cost to call an ally is given by
-            #
-            # standard_prestige_cost_to_call*ally_max_military_strength/our_max_military_strength
-            # 
-            # or in other words, the ratio of military strengths multiplied by the standard cost to call an ally.
-            # Because we can't use these script_values easily with different scopes (i.e. different max_military_strength values for us and them)
-            # we're instead premultiplying our remaining prestige by our max military strength to effectively have the same comparison i.e.
-            #
-            # prestige > standard_prestige_cost_to_call*ally_max_military_strength/our_max_military_strength
-            #
-            # is equivalent to
-            #
-            # prestige*our_max_military_strength > standard_prestige_cost_to_call*ally_max_military_strength
-
-            AND = {
-                effective_remaining_prestige > next_ally.max_military_strength_multiplier_by_tier_factor
-                any_in_list = {
-                    list = potential_allies_not_tagged
-                    count >= 1
-                }
+        every_ally = {
+            limit = {
+                has_relation_supported_war_leader = scope:attacker
             }
-
+            add_to_list = potential_allies_not_tagged
         }
-        ordered_ally = {
+        # 'do' part of loop to set next_ally
+        ordered_in_list = {
+            list = potential_allies_not_tagged
             max = 1
             order_by = {
-                value = max_military_strength_multiplied_by_tier_factor
+                value = max_military_strength_with_tier_factor
             }
-            save_scope_as = next_ally_in_list
-            add_to_list = potential_allies_to_be_tagged
+            save_scope_as = next_ally
+        }
+        while = {
+            limit = {
+
+                # effective_prestige is the total prestige multiplied by max_military_strength.
+                # This is used because ideally what we'd be doing here is comparing the remaining available prestige to the prestige cost to call an ally
+                # where the prestige cost to call an ally is given by
+                #
+                # standard_prestige_cost_to_call*ally_max_military_strength/our_max_military_strength
+                # 
+                # or in other words, the ratio of military strengths multiplied by the standard cost to call an ally.
+                # Because we can't use these script_values easily with different scopes (i.e. different max_military_strength values for us and them)
+                # we're instead premultiplying our remaining prestige by our max military strength to effectively have the same comparison i.e.
+                #
+                # prestige > standard_prestige_cost_to_call*ally_max_military_strength/our_max_military_strength
+                #
+                # is equivalent to
+                #
+                # prestige*our_max_military_strength > standard_prestige_cost_to_call*ally_max_military_strength
+
+                AND = {
+                    effective_remaining_prestige > next_ally.max_military_strength_with_tier_factor
+                    any_in_list = {
+                        list = potential_allies_not_tagged
+                        count >= 1
+                    }
+                }
+
+            }
+            set_variable = {
+                name = imminent_war
+                value = root #cb scope
+            }
             remove_from_list = potential_allies_not_tagged
             change_variable = {
                 name = effective_remaining_prestige
-                subtract = max_military_strength_multiplied_by_tier_factor
+                subtract = max_military_strength_with_tier_factor
+            }
+            ordered_in_list = {
+                list = potential_allies_not_tagged
+                max = 1
+                order_by = {
+                    value = max_military_strength_with_tier_factor
+                }
+                save_scope_as = next_ally
             }
         }
-    }
-    every_in_list = {
-        list = potential_allies_to_be_tagged
-        set_relation_pledged_supporter_of = scope:caller
     }
 }
