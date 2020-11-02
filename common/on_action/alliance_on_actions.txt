@@ -21,7 +21,7 @@ on_alliance_removed = {
 			limit = {
 				exists = scope:second
 			}
-			set_relation_dummy_ally = scope:second
+			remove_relation_dummy_ally = scope:second
 		}
 		scope:second = { update_embassies_effect = yes }
 		# Remove the opinion modifier from having proposed an alliance via the perk:
@@ -40,7 +40,7 @@ on_alliance_broken = {
 	effect = {
 		# Embassies modifier removal:
 		update_embassies_effect = yes
-        set_relation_dummy_ally = scope:second
+        remove_relation_dummy_ally = scope:second
 		scope:second = { update_embassies_effect = yes }
 
 		# Remove the opinion modifier from having proposed an alliance via the perk:

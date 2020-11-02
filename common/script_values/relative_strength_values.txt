@@ -30,6 +30,8 @@ compare_defender_to_attacker_sides_value = {
 
 standard_war_ai_score_mult_value = {
     if = {
+        debug_log = "comparing..."
+        debug_log_details = yes
         limit = {
             compare_defender_to_attacker_sides_value > 2
         }
