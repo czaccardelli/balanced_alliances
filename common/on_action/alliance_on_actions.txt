@@ -20,8 +20,12 @@ on_alliance_removed = {
 		if = {
 			limit = {
 				AND = {
-					is_alive = scope:second
-					is_alive = root
+					scope:second = {
+						is_alive = yes
+					}
+					root = {
+						is_alive = yes
+					}
 				}
 			}
 			remove_relation_dummy_ally = scope:second
@@ -46,8 +50,12 @@ on_alliance_broken = {
 		if = {
 			limit = {
 				AND = {
-					is_alive = scope:second
-					is_alive = root
+					scope:second = {
+						is_alive = yes
+					}
+					root = {
+						is_alive = yes
+					}
 				}
 			}
 			remove_relation_dummy_ally = scope:second
