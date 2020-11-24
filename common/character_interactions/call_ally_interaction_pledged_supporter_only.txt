@@ -43,7 +43,10 @@
 			is_war_leader = scope:actor
 		}
 
-		recipient_not_already_in_another_war_with_any_target_war_participants_trigger = yes
+		joiner_not_already_in_another_war_with_any_target_war_participants_trigger = {
+			WARRIOR = scope:actor
+			JOINER = scope:recipient
+		}
 	}
 
 	
@@ -77,24 +80,9 @@
 			}
 		}
 
-		# Can never call vassals to your own wars (their obligations are met via taxes and levies!)
-		custom_description = {
-			text = cannot_call_vassal_to_war
-			scope:recipient = {
-				NOT = {
-					target_is_liege_or_above = scope:actor
-				}
-			}
-		}
-
-		# Can never call your liege to your own wars (they protect you only from foreign invaders, by being the war target instead of you)
-		custom_description = {
-			text = cannot_call_liege_to_war
-			scope:recipient = {
-				NOT = {
-					target_is_vassal_or_below = scope:actor
-				}
-			}
+		can_potentially_call_ally_trigger = {
+			WARRIOR = scope:actor
+			JOINER = scope:recipient
 		}
 
 		# Cannot call a character of the "wrong" religion to a Great Holy War
@@ -119,7 +107,7 @@
 	}
 
 	can_be_picked = {
-		can_call_ally_liege_vassal_check_trigger = yes
+		can_join_war_liege_vassal_check_trigger = { WARRIOR = scope:actor JOINER = scope:recipient }
 
 		scope:target = {
 			is_war_leader = scope:actor

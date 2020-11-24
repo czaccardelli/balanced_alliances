@@ -10,6 +10,27 @@
 			add_attacker = scope:recipient
 			scope:actor = {
 				remove_relation_pledged_supporter = scope:recipient
+				if = {
+					limit = {
+						scope:recipient.primary_title.tier = tier_county
+					}
+					add_prestige = minor_prestige_loss
+				}
+				else_if = {
+					limit = {
+						scope:recipient.primary_title.tier = tier_duchy
+					}
+					add_prestige = medium_prestige_loss
+				}
+				else_if = {
+					limit = {
+						scope:recipient.primary_title.tier = tier_kingdom
+					}
+					add_prestige = major_prestige_loss
+				}
+				else = {
+					add_prestige = massive_prestige_loss
+				}
 			}
 		}
 		else = {
