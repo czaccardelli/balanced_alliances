@@ -16,13 +16,6 @@
 		}
 		scope:recipient = {
 			is_allied_to = scope:actor
-			if = {
-				limit = {
-					scope:target = { is_attacker = scope:actor }
-				}
-				has_relation_supported_war_leader = scope:actor
-			}
-
 		}
 		scope:actor = { #If you can call them as a House Member then do that
 			NOT = {
@@ -54,6 +47,12 @@
 		
 		scope:recipient = {
 			is_ruler = yes
+		}
+		trigger_if = {
+			limit = {
+				scope:target = { is_attacker = scope:actor }
+			}
+			has_relation_supported_war_leader = scope:actor
 		}
 
 		# Only War Leaders can call allies

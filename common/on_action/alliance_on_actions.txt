@@ -6,7 +6,7 @@ on_alliance_added = {
 		# Embassies Perk stat bonus:
 		scope:first = { update_embassies_effect = yes }
 		scope:second = { update_embassies_effect = yes }
-		set_relation_dummy_ally = scope:second
+		scope:first = { set_relation_dummy_ally = scope:second }
 	}
 }
 
@@ -25,12 +25,12 @@ on_alliance_removed = {
 					scope:second = {
 						is_alive = yes
 					}
-					root = {
+					scope:first = {
 						is_alive = yes
 					}
 				}
 			}
-			remove_relation_dummy_ally = scope:second
+			scope:first = { remove_relation_dummy_ally = scope:second }
 		}
 
 		# Remove the opinion modifier from having proposed an alliance via the perk:
@@ -57,12 +57,12 @@ on_alliance_broken = {
 					scope:second = {
 						is_alive = yes
 					}
-					root = {
+					scope:first = {
 						is_alive = yes
 					}
 				}
 			}
-			remove_relation_dummy_ally = scope:second
+			scope:first = { remove_relation_dummy_ally = scope:second }
 		}
 
 		# Remove the opinion modifier from having proposed an alliance via the perk:
