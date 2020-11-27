@@ -52,7 +52,7 @@
 			limit = {
 				scope:target = { is_attacker = scope:actor }
 			}
-			has_relation_supported_war_leader = scope:actor
+			scope:recipient = { has_relation_supported_war_leader = scope:actor }
 		}
 
 		# Only War Leaders can call allies
