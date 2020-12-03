@@ -50,7 +50,11 @@
 		}
 		trigger_if = {
 			limit = {
-				scope:target.primary_attacker = scope:actor
+				scope:actor = {
+					any_character_war = {
+						primary_attacker = scope:actor
+					}
+				}
 			}
 			scope:recipient = { has_relation_supported_war_leader = scope:actor }
 		}
